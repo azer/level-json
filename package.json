@@ -1,0 +1,27 @@
+{
+  "name": "level-json-wrapper",
+  "version": "0.0.1",
+  "description": "LevelDB JSON Wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "call-all": "0.x"
+  },
+  "keywords": [
+    "leveldb",
+    "json"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/level-json-wrapper.git",
+    "type": "git"
+  },
+  "author": "Azer Koculu <azer@kodfabrik.com>",
+  "license": "BSD",
+  "dependencies": {
+    "levelup": "~0.15.0",
+    "leveldown": "~0.8.0",
+    "local-debug": "0.0.0"
+  }
+}
