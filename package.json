@@ -4,7 +4,7 @@
   "description": "LevelDB JSON Wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "fox"
   },
   "devDependencies": {
     "call-all": "0.x"
