@@ -1,5 +1,5 @@
 {
-  "name": "level-json-wrapper",
+  "name": "level-json",
   "version": "0.0.1",
   "description": "LevelDB JSON Wrapper",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "json"
   ],
   "repository": {
-    "url": "git@github.com:azer/level-json-wrapper.git",
+    "url": "git@github.com:azer/level-json.git",
     "type": "git"
   },
   "author": "Azer Koculu <azer@kodfabrik.com>",

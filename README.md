@@ -1,17 +1,17 @@
-## level-json-wrapper
+## level-json
 
 LevelDB JSON Wrapper
 
 ## Install
 
 ```bash
-$ npm install level-json-wrapper
+$ npm install level-json
 ```
 
 ## Usage
 
 ```js
-io = require('level-json-wrapper')('./db')
+io = require('level-json')('./db')
 
 io.set('foo', { foo: 123, bar: 456 }, function (error) {
 
@@ -31,10 +31,10 @@ io.set('foo', { foo: 123, bar: 456 }, function (error) {
 
 ## API
 
-Call `level-json-wrapper` with a directory path to establish new LevelDB connection:
+Call `level-json` with a directory path to establish new LevelDB connection:
 
 ```js
-io = require('level-json-wrapper')('./data')
+io = require('level-json')('./data')
 ```
 
 A wrapper function with following methods will be returned:
