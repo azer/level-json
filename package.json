@@ -7,7 +7,8 @@
     "test": "fox"
   },
   "devDependencies": {
-    "call-all": "0.x"
+    "call-all": "0.x",
+    "fox": "*"
   },
   "keywords": [
     "leveldb",
