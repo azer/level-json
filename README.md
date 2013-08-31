@@ -8,26 +8,23 @@ LevelDB JSON Wrapper
 $ npm install level-json
 ```
 
-## Usage
+## Usage Example
 
 ```js
 io = require('level-json')('./db')
 
 io.set('foo', { foo: 123, bar: 456 }, function (error) {
-
   if (error) throw error
 
   io.get('foo', function (error, foo) {
-
     if (error) throw error
 
     foo
     // => { foo: 123, bar: 456 }
-
   })
-
 })
 ```
+
 
 ## API
 
@@ -58,3 +55,5 @@ io('foo', { foo: 123 }, function (error) {
 
 })
 ```
+
+
