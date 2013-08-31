@@ -1,4 +1,4 @@
-## level-json
+## level-json  [![Build Status](https://travis-ci.org/azer/level-json.png)](https://travis-ci.org/azer/level-json)
 
 LevelDB JSON Wrapper
 
