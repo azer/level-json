@@ -1,7 +1,7 @@
 {
   "name": "level-json",
   "version": "0.0.1",
-  "description": "LevelDB JSON Wrapper",
+  "description": "LevelDB wrapper to avoid repeating encoding fields for just JSON",
   "main": "index.js",
   "scripts": {
     "test": "fox"
@@ -21,8 +21,8 @@
   "author": "Azer Koculu <azer@kodfabrik.com>",
   "license": "BSD",
   "dependencies": {
-    "levelup": "~0.15.0",
     "leveldown": "~0.8.0",
-    "local-debug": "0.0.0"
+    "local-debug": "0.0.0",
+    "levelup": "~0.16.0"
   }
 }

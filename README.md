@@ -1,6 +1,6 @@
 ## level-json  [![Build Status](https://travis-ci.org/azer/level-json.png)](https://travis-ci.org/azer/level-json)
 
-LevelDB JSON Wrapper
+LevelDB wrapper to avoid repeating encoding fields for just JSON
 
 ## Install
 
@@ -36,10 +36,14 @@ io = require('level-json')('./data')
 
 A wrapper function with following methods will be returned:
 
+* `del`
 * `get`
 * `set`
 * `destroy`
 * `close`
+* `batch`
+* `isClosed`
+* `isOpen`
 
 The wrapper function can be called for getting and setting values like below:
 
@@ -55,5 +59,3 @@ io('foo', { foo: 123 }, function (error) {
 
 })
 ```
-
-
