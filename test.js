@@ -10,19 +10,9 @@ before(function(done){
   done();
 });
 
-beforeEach(function(done){
-  var fns = [];
+beforeEach(clean);
 
-  if (io1) {
-    fns.push(io1.destroy);
-  }
-
-  if (io2) {
-    fns.push(io2.destroy);
-  }
-
-  callAll(fns)(done);
-});
+afterEach(clean);
 
 it('saves and reads JSON values', function(done){
   io1 = newIO();
@@ -113,3 +103,17 @@ it('saves to a custom path', function(done){
   });
 
 });
+
+function clean(done){
+  var fns = [];
+
+  if (io1) {
+    fns.push(io1.destroy);
+  }
+
+  if (io2) {
+    fns.push(io2.destroy);
+  }
+
+  callAll(fns)(done);
+}
