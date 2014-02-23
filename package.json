@@ -23,6 +23,7 @@
   "dependencies": {
     "leveldown": "~0.8.0",
     "local-debug": "0.0.0",
-    "levelup": "~0.16.0"
+    "levelup": "~0.16.0",
+    "level-client": "0.0.1"
   }
 }

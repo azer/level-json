@@ -25,7 +25,6 @@ io.set('foo', { foo: 123, bar: 456 }, function (error) {
 })
 ```
 
-
 ## API
 
 Call `level-json` with a directory path to establish new LevelDB connection:

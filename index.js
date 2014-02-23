@@ -1,6 +1,6 @@
-var DEFAULT_PATH = './db';
+var DEFAULT_PATH = './data';
 
-var up = require('levelup');
+var up = require("level-client");
 var down = require("leveldown");
 var info = require("local-debug")("info");
 var trace = require("local-debug")("trace");
