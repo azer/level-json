@@ -4,11 +4,11 @@
   "description": "LevelDB wrapper to avoid repeating encoding fields for just JSON",
   "main": "index.js",
   "scripts": {
-    "test": "fox"
+    "test": "prova"
   },
   "devDependencies": {
     "call-all": "0.x",
-    "fox": "*"
+    "prova": "*"
   },
   "keywords": [
     "leveldb",
@@ -23,7 +23,6 @@
   "dependencies": {
     "leveldown": "~0.8.0",
     "local-debug": "0.0.0",
-    "levelup": "~0.16.0",
     "level-client": "0.0.1"
   }
 }
