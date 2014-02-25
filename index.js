@@ -101,6 +101,7 @@ function newIO (callback) {
   wrapper.createWriteStream = method(io, 'createWriteStream');
   wrapper.createKeyStream = method(io, 'createKeyStream');
   wrapper.createValueStream = method(io, 'createValueStream');
+  wrapper.io = io;
 
   wrapper.destroy = function (callback) {
     if (wrapper.isClosed()) return destroy(dir, callback);
