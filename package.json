@@ -1,6 +1,6 @@
 {
   "name": "level-json",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "LevelDB wrapper to avoid repeating encoding fields for just JSON",
   "main": "index.js",
   "scripts": {
