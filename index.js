@@ -97,6 +97,10 @@ function newIO (callback) {
   wrapper.del = method(io, 'del');
   wrapper.isClosed = method(io, 'isClosed');
   wrapper.isOpen = method(io, 'isOpen');
+  wrapper.createReadStream = method(io, 'createReadStream');
+  wrapper.createWriteStream = method(io, 'createWriteStream');
+  wrapper.createKeyStream = method(io, 'createKeyStream');
+  wrapper.createValueStream = method(io, 'createValueStream');
 
   wrapper.destroy = function (callback) {
     if (wrapper.isClosed()) return destroy(dir, callback);

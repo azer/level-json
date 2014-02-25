@@ -21,7 +21,7 @@
   "author": "Azer Koculu <azer@kodfabrik.com>",
   "license": "BSD",
   "dependencies": {
-    "leveldown": "~0.8.0",
+    "leveldown": "0.10.0",
     "local-debug": "0.0.0",
     "level-client": "0.0.1"
   }

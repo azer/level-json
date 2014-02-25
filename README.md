@@ -38,9 +38,11 @@ A wrapper function with following methods will be returned:
 * `del`
 * `get`
 * `set`
+* `batch`
+* `createReadStream`
+* `createWriteStream`
 * `destroy`
 * `close`
-* `batch`
 * `isClosed`
 * `isOpen`
 
