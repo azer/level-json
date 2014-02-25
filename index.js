@@ -57,7 +57,7 @@ function newIO (callback) {
   var dir = DEFAULT_PATH;
   var options;
 
-  if (typeof callback == 'string') {
+  if (callback != undefined && typeof callback != 'function') {
     dir = callback;
     callback = undefined;
   }
@@ -72,7 +72,7 @@ function newIO (callback) {
     callback = arguments[2];
   }
 
-  if (!options || options.encoding) {
+  if (!options || !options.encoding) {
     options || (options = {});
     options.encoding = {
       encode: JSON.stringify,
