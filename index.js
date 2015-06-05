@@ -74,10 +74,7 @@ function newIO (callback) {
 
   if (!options || !options.encoding) {
     options || (options = {});
-    options.encoding = {
-      encode: JSON.stringify,
-      decode: JSON.parse
-    };
+    options.valueEncoding = 'json';
   }
 
   var io = up(dir, options, callback);

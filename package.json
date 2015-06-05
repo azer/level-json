@@ -7,7 +7,6 @@
     "test": "prova"
   },
   "devDependencies": {
-    "call-all": "0.x",
     "prova": "*"
   },
   "keywords": [
@@ -21,8 +20,8 @@
   "author": "Azer Koculu <azer@kodfabrik.com>",
   "license": "BSD",
   "dependencies": {
-    "leveldown": "0.10.0",
-    "local-debug": "0.0.0",
-    "level-client": "0.0.1"
+    "level-client": "^1.0.0",
+    "leveldown": "^1.2.2",
+    "local-debug": "0.0.0"
   }
 }

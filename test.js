@@ -1,100 +1,90 @@
+var createTest = require('prova');
 var newIO = require('./');
-var callAll = require("call-all");
 
-var io1;
-var io2;
+var io1 = newIO();
+var io2 = newIO('./db2');
 
-before(function(done){
-  io1 = newIO();
-  io2 = newIO('./db2');
-  done();
-});
-
-beforeEach(clean);
-
-afterEach(clean);
-
-it('saves and reads JSON values', function(done){
+test('saves and reads JSON values', function (t) {
   io1 = newIO();
 
-  io1('foo', { foo: true, bar: 123, qux: { span: 'Eggs' } }, function (error, record) {
-    if(error) return done(error);
+  io1('foo', { foo: true, bar: 123, qux: { span: 'Eggs' } }, function (error) {
+    t.error(error);
 
     io1('foo', function (error, record) {
-      if (error) return done(error);
-      expect(record.foo).to.be.true;
-      expect(record.qux.span).to.equal('Eggs');
-      done();
+      t.error(error);
+      t.ok(record.foo);
+      t.equal(record.qux.span, 'Eggs');
+      t.end();
     });
   });
 });
 
-it('saves and reads with JSON keys', function(done){
+test('saves and reads with JSON keys', function (t) {
   io1 = newIO();
 
   io1({ key: 'foo' }, { foo: true, bar: 123, qux: { span: 'Eggs' } }, function (error, record) {
-    if(error) return done(error);
+    t.error(error);
 
     io1({ key: 'foo' }, function (error, record) {
-      if (error) return done(error);
-      expect(record.foo).to.be.true;
-      expect(record.qux.span).to.equal('Eggs');
-      done();
+      t.error(error);
+      t.ok(record.foo);
+      t.equal(record.qux.span, 'Eggs');
+      t.end();
     });
   });
 });
 
-it('saves and deletes a record', function(done){
+test('saves and deletes a record', function (t) {
   io1 = newIO();
 
   io1('foo', { foo: true, bar: 123, qux: { span: 'Eggs' } }, function (error, record) {
-    if(error) return done(error);
+    t.error(error);
 
     io1.del('foo', function (error) {
-      if (error) return done(error);
+      t.error(error);
 
       io1('foo', function (error, record) {
-        expect(error).to.exist;
-        expect(record).to.not.exist;
-        done();
+        t.ok(error);
+        t.notOk(record);
+        t.end();
       });
     });
   });
 
 });
 
-it('checks if db is closed or open', function(done){
+test('checks if db is closed or open', function (t) {
   io1 = newIO(function () {
-    expect(io1.isOpen()).to.be.true;
+    t.ok(io1.isOpen());
 
     io1.close(function () {
-      expect(io1.isClosed()).to.be.true;
-      done();
+      t.ok(io1.isClosed());
+      t.end();
     });
   });
 });
 
 
-it('saves to a custom path', function(done){
+test('saves to a custom path', function (t) {
   io1 = newIO();
 
   io1('foo', { foo: true }, function (error, record) {
-    if(error) return done(error);
+    t.error(error);
 
     io2 = newIO('./db2');
 
     io2('foo', function (error, record) {
-      expect(error).to.exist;
-      expect(record).to.not.exist;
+      t.ok(error);
+      t.notOk(record);
 
       io2('foo', { bar: true }, function (error, record) {
-        if(error) return done(error);
+        t.error(error);
 
         io2('foo', function (error, record) {
-          if (error) return done(error);
-          expect(record.foo).not.to.be.true;
-          expect(record.bar).to.be.true;
-          done();
+          t.error(error);
+          t.notOk(record.foo);
+          t.ok(record.bar);
+          t.end();
         });
       });
 
@@ -104,16 +94,17 @@ it('saves to a custom path', function(done){
 
 });
 
-function clean(done){
-  var fns = [];
+function test (title, fn) {
+  createTest(title, function (t) {
+    reset(function () {
+      fn(t);
+    });
+  });
+}
 
-  if (io1) {
-    fns.push(io1.destroy);
-  }
 
-  if (io2) {
-    fns.push(io2.destroy);
-  }
-
-  callAll(fns)(done);
+function reset (done){
+  io1.destroy(function () {
+    io2.destroy(done);
+  });
 }
