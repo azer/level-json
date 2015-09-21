@@ -11,7 +11,7 @@ $ npm install level-json
 ## Usage Example
 
 ```js
-io = require('level-json')('./db')
+var io = require('level-json')('./db')
 
 io.set('foo', { foo: 123, bar: 456 }, function (error) {
   if (error) throw error
@@ -30,7 +30,7 @@ io.set('foo', { foo: 123, bar: 456 }, function (error) {
 Call `level-json` with a directory path to establish new LevelDB connection:
 
 ```js
-io = require('level-json')('./data')
+var io = require('level-json')('./data')
 ```
 
 A wrapper function with following methods will be returned:
